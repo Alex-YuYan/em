@@ -57,7 +57,7 @@ function App() {
         <h1>How <br/>are you <br/>feeling now?</h1> : null
       }
 
-      {showHappy ?
+      {showHappy && op!==3 ?
         <div>
           <h2>{disp}</h2><h3>people are also feeling happy right now.</h3>
           <h3>Will you kindly share some happiness with the ones that are not feeling so
@@ -83,6 +83,12 @@ function App() {
           </form>
         </div>
         : null}
+      {
+        op===3 ? <div>
+          <h3>{user_id}, Thank you for your kind message. Your happiness could be exclusive to yourself, but you are just a wonderful person.
+            Meanwhile, there is someone, somewhere in this world, reading your lovely yet powerful word. You made his/her day. You made our day.</h3>
+        </div> : null
+      }
       {showSad ?
         <div>
           <h2>{disp}</h2> <h4>people are also having a bad day. But we do have someone to
@@ -90,12 +96,12 @@ function App() {
           <h4>{line}</h4>
         </div>
         : null}
-      {!showHappy && !showSad ?
+      {!showHappy && !showSad && op!==3 ?
         <button className="_button" id="happy" onClick={() => setOp(1)}>I am happy</button> : null}
-      {!showHappy && !showSad ?
+      {!showHappy && !showSad && op!==3 ?
         <button className="_button" id="sad" onClick={() => setOp(2)}>I'm depressed</button> : null}
     </div>
   );
-};;
+};
 
 export default App;
