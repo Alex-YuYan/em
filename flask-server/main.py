@@ -1,17 +1,17 @@
-from flask import Flask, jsonify
+from flask import Flask
 from flask import request
+from flask import jsonify
 import random
+from PeopleCounter import NumOfPeople
 app = Flask(__name__)
-
+num_happy=NumOfPeople(20)
+num_sad=NumOfPeople(20)
 messages=dict()
-happy=[231819]
-sad=[194890]
 
-messages[1]="I LOVE YOU"
 
 @app.route("/hello")
 def hello_world():
-    return jsonify(text="Hello, World!")
+    return "<p>Hello, World!</p>"
 
 
 @app.route('/PostMessage', methods=['POST'])
@@ -25,20 +25,21 @@ def GetMessage():
     if request.method == 'POST':
         return jsonify(text=messages[random.choice(list(messages))])
 
+
 @app.route("/GetHappy",methods=['POST'])
-def GetHappy(happy=happy):
-    return jsonify(text=str(happy[0]))
+def GetHappy(num_happy=num_happy):
+    return jsonify(text=str(num_happy.total))
 
 @app.route("/GetSad",methods=['POST'])
-def GetSad(sad=sad):
-    return jsonify(text=str(sad[0]))
+def GetSad(num_sad=num_sad):
+    return jsonify(text=str(num_sad.total))
 
 @app.route('/Happy')
-def Happy(happy=happy):
-    happy[0]+=1
+def Happy(num_happy=num_happy):
+    num_happy.addone()
     return jsonify(text="success")
 
 @app.route('/Sad')
-def Sad(sad=sad):
-    sad[0]+=1
+def Sad(num_sad=num_sad):
+    num_sad.addone()
     return jsonify(text="success")
