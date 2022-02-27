@@ -1,5 +1,8 @@
 # em:)
 Hack NYU 2022 Project
+was to be depolyed on a server
+encountered some technical issue
+so only development environment is available
 ## Start flask server 
 run
 ```
