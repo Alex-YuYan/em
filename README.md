@@ -1,4 +1,4 @@
-# emo
+# em:)
 Hack NYU 2022 Project
 ## Start flask server 
 run
@@ -9,6 +9,15 @@ pip install flask
 python main.py
 ```
 to start flask server.
+
+## Start React and load HTML
+Make sure the latest version of Node.js and npm are installed
+```
+cd client
+npm install
+npm start
+```
+page should be available at ```localhost:3000```
 
 ## Backend APIs
 + `/PostMessage(user_id,message)`
