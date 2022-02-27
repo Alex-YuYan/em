@@ -4,9 +4,9 @@ import App from './App';
 import theme from './theme';
 import {ThemeProvider} from "@emotion/react";
 
-document.body.addEventListener('touchmove', function(e){
-  e.preventDefault();
-}, { passive: false });
+// document.body.addEventListener('touchmove', function(e){
+//   e.preventDefault();
+// }, { passive: false });
 
 ReactDOM.render(
   <React.StrictMode>
