@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="59de43ce-7ede-459b-8ecc-e9248f8d5afb" name="iPhone" url="http://192.168.0.53:3000/">
+        <fileTransfer mountedRoot="C:\Users\Alex Yan\Desktop\emo\client" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>

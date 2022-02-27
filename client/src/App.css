@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rochester&display=swap');
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    /*font-family: 'Rochester', cursive;*/
+    margin: 0px
+}
+
+
+h1, h2, h3, h4, h5{
+    margin: 0;
+}
+
+h1 {
+    color: crimson;
+    text-align: left;
+    left: 5vw;
+    position: relative;
+    top: 20vw;
+    font-size: 46px;
+    text-shadow: -2px 2px #000000;
+}
+
+h2 {
+    color: cyan;
+    font-size: 64px;
+    text-align: left;
+    position: relative;
+    left: 8vw;
+    top: 18vh;
+    text-shadow: 1px 1px #ffffff;
+}
+
+h3, h4, h5 {
+    font-size: 24px;
+    text-align: left;
+    position: relative;
+    inline-size: 90vw;
+    overflow-wrap: normal;
+    top: 18vh;
+    left: 8vw;
+}
+
+h4 {
+    color: wheat;
+}
+
+
+div {
+    flex: 1;
+}
+
+._button {
+    font-family: Fredoka;
+    background-color: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+#happy {
+    position: fixed;
+    bottom: 10vh;
+    left: 10vw;
+}
+
+#sad {
+    position: fixed;
+    bottom: 10vh;
+    right: 10vw;
+}
+
+._button:hover {
+    background-color: #fff;
+}
+
+._button:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+    ._button {
+        min-width: 120px;
+        padding: 0 25px;
+    }
+}
