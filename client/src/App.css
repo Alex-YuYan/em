@@ -46,6 +46,11 @@ h4 {
     color: wheat;
 }
 
+form {
+    position: relative;
+    top: 18vh;
+    left: 8vw;
+}
 
 div {
     flex: 1;
@@ -73,14 +78,20 @@ div {
 
 #happy {
     position: fixed;
-    bottom: 10vh;
+    bottom: 24vh;
     left: 10vw;
 }
 
 #sad {
     position: fixed;
-    bottom: 10vh;
+    bottom: 24vh;
     right: 10vw;
+}
+
+#formsub {
+    position: relative;
+    line-height: 24px;
+    top: 1vh;
 }
 
 ._button:hover {

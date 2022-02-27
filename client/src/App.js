@@ -4,15 +4,17 @@ import bgb from './bgbutton.jpg'
 import bgh from './bghappy.jpg'
 import bgs from './bgsad.jpg'
 
+
 function App() {
 
-  let currentTime = Date.now()
   const [op, setOp] = useState(0)
   const [disp, setDisp] = useState("")
   const [line, setLine] = useState("")
   const [showHappy, setShowHappy] = useState(false)
   const [showSad, setShowSad] = useState(false)
   const [img, setImg] = useState(bgb)
+  const [message, setMessage] = useState("")
+  const [user_id, setUser_id] = useState("")
 
   useEffect(() => {
     if (op === 1) {
@@ -32,8 +34,20 @@ function App() {
       ).then(res => setLine(res.text))
       setShowSad(true)
       setImg(bgs)
+    } else if (op===3) {
+      let formData = new FormData()
+      formData.append('user_id', user_id)
+      formData.append('message',message+" --from "+user_id)
+      fetch("/PostMessage", {method: "POST", body: formData}).then(
+        res => res.json()
+      ).then(res => console.log(res))
     }
   }, [op])
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setOp(3)
+  }
 
 
   return (
@@ -45,14 +59,33 @@ function App() {
 
       {showHappy ?
         <div>
-          <h2>{disp}</h2><h3>people are also feeling happy</h3>
-          <h3>want to share some happiness with the ones that are not feeling so
+          <h2>{disp}</h2><h3>people are also feeling happy right now.</h3>
+          <h3>Will you kindly share some happiness with the ones that are not feeling so
             good?</h3>
+          <form onSubmit={handleSubmit}>
+            <label>Your alias: <br/>
+              <input
+                type="text"
+                value={user_id}
+                onChange={(e) => setUser_id(e.target.value)}
+              />
+            </label>
+            <label><br/>Your message: <br/>
+              <textarea
+                rows="4" cols="50"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+            </label>
+            <div>
+              <button className="_button" id="formsub" type="submit">Submit</button>
+            </div>
+          </form>
         </div>
         : null}
       {showSad ?
         <div>
-          <h2>{disp}</h2> <h4>people shares a bad day with you. Cheer up! Here is a word from a kind
+          <h2>{disp}</h2> <h4>people are also having a bad day. But we do have someone to
             stranger: </h4>
           <h4>{line}</h4>
         </div>
@@ -63,6 +96,6 @@ function App() {
         <button className="_button" id="sad" onClick={() => setOp(2)}>I'm depressed</button> : null}
     </div>
   );
-};
+};;
 
 export default App;
