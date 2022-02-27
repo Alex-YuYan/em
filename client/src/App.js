@@ -54,12 +54,12 @@ function App() {
     <div style={{backgroundImage: `url(${img})`, backgroundPosition:"center"
       , backgroundSize: "cover", backgroundRepeat:"no-repeat",height:"100vh"}}>
       {!showHappy && !showSad ?
-        <h1>How <br/>are you <br/>feeling now?</h1> : null
+        <h1>How <br/>are you <br/>right now?</h1> : null
       }
 
       {showHappy && op!==3 ?
         <div>
-          <h2>{disp}</h2><h3>people are also feeling happy right now.</h3>
+          <h2>{disp}</h2><h3>people are also feeling awesome right now.</h3>
           <h3>Will you kindly share some happiness with the ones that are not feeling so
             good?</h3>
           <form onSubmit={handleSubmit}>
@@ -86,20 +86,20 @@ function App() {
       {
         op===3 ? <div>
           <h3>{user_id}, Thank you for your kind message. Your happiness could be exclusive to yourself, but you are just a wonderful person.
-            Meanwhile, there is someone, somewhere in this world, reading your lovely yet powerful word. You made his/her day. You made our day.</h3>
+            Meanwhile, there is someone, somewhere in this world, reading your lovely yet powerful words. You made his/her day. You made our day.</h3>
         </div> : null
       }
       {showSad ?
         <div>
-          <h2>{disp}</h2> <h4>people are also having a bad day. But we do have someone to
-            stranger: </h4>
+          <h2>{disp}</h2> <h4>people are also having a bad day. But we do have someone who wrote something especially for you, to make you feel better:
+            </h4>
           <h4>{line}</h4>
         </div>
         : null}
       {!showHappy && !showSad && op!==3 ?
-        <button className="_button" id="happy" onClick={() => setOp(1)}>I am happy</button> : null}
+        <button className="_button" id="happy" onClick={() => setOp(1)}>Wonderful.</button> : null}
       {!showHappy && !showSad && op!==3 ?
-        <button className="_button" id="sad" onClick={() => setOp(2)}>I'm depressed</button> : null}
+        <button className="_button" id="sad" onClick={() => setOp(2)}>Not so good.</button> : null}
     </div>
   );
 };
