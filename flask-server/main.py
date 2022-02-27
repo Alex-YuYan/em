@@ -4,7 +4,7 @@ from flask import jsonify
 import random
 from PeopleCounter import NumOfPeople
 app = Flask(__name__)
-num_happy=NumOfPeople(20)
+num_happy=NumOfPeople(20) #number of miniute 
 num_sad=NumOfPeople(20)
 messages=dict()
 
