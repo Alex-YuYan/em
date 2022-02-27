@@ -43,3 +43,6 @@ def Happy(num_happy=num_happy):
 def Sad(num_sad=num_sad):
     num_sad.addone()
     return jsonify(text="success")
+
+if __name__ == '__main__':
+    app.run()

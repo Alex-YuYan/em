@@ -1,6 +1,6 @@
 import threading
 
-TIME_SLOT_LENGTH=1 #length of each time slot in seconds
+TIME_SLOT_LENGTH=20 #length of each time slot in seconds
 
 class NumOfPeople:
     def __init__(self, time_range):
